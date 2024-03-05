@@ -53,14 +53,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Pages\Authors.razor.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\Authors.razor.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Pages\**\*.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

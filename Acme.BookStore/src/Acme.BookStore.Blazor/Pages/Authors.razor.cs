@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Acme.BookStore.Authors;
 using Acme.BookStore.Permissions;
+using AutoMapper.Internal.Mappers;
 using Blazorise;
 using Blazorise.DataGrid;
 using Microsoft.AspNetCore.Authorization;
@@ -33,9 +34,9 @@ public partial class Authors
     private Modal EditAuthorModal { get; set; }
 
     private Validations CreateValidationsRef;
-    
+
     private Validations EditValidationsRef;
-    
+
     public Authors()
     {
         NewAuthor = new CreateAuthorDto();
@@ -91,7 +92,7 @@ public partial class Authors
     private void OpenCreateAuthorModal()
     {
         CreateValidationsRef.ClearAll();
-        
+
         NewAuthor = new CreateAuthorDto();
         CreateAuthorModal.Show();
     }
@@ -104,7 +105,7 @@ public partial class Authors
     private void OpenEditAuthorModal(AuthorDto author)
     {
         EditValidationsRef.ClearAll();
-        
+
         EditingAuthorId = author.Id;
         EditingAuthor = ObjectMapper.Map<AuthorDto, UpdateAuthorDto>(author);
         EditAuthorModal.Show();
